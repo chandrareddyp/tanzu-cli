@@ -14,9 +14,13 @@ import (
 	"github.com/vmware-tanzu/tanzu-cli/test/e2e/framework"
 	pluginlifecyclee2e "github.com/vmware-tanzu/tanzu-cli/test/e2e/plugin_lifecycle"
 )
-
+// This test suite covers below use cases
+// Use case 1: Download plugin bundle, Upload plugin bundle and plugin lifecycle tests with plugin group 'vmware-tkg/default:v0.0.1'
+// Use case 2: Download plugin bundle, Upload plugin bundle and plugin lifecycle tests with plugin group 'vmware-tmc/tmc-user:v9.9.9'
+// Use case 3: Download plugin bundle, Upload plugin bundle and plugin lifecycle tests with plugin group 'vmware-tmc/tmc-user:v0.0.1'
+// Use case 4: Download plugin bundle, Upload plugin bundle and plugin lifecycle tests without specifying any plugin group
 var _ = framework.CLICoreDescribe("[Tests:E2E][Feature:Airgapped-Plugin-DownloadBundle-UploadBundle-Lifecycle]", func() {
-
+	// Use case 1: Download plugin bundle, Upload plugin bundle and plugin lifecycle tests with plugin group 'vmware-tkg/default:v0.0.1'
 	Context("Download plugin bundle, Upload plugin bundle and plugin lifecycle tests with plugin group 'vmware-tkg/default:v0.0.1'", func() {
 		// Test case: download plugin bundle for plugin-group vmware-tkg/default:v0.0.1
 		It("download plugin bundle with specific plugin-group vmware-tkg/default:v0.0.1", func() {
@@ -78,6 +82,7 @@ var _ = framework.CLICoreDescribe("[Tests:E2E][Feature:Airgapped-Plugin-Download
 		})
 	})
 
+	// Use case 2: Download plugin bundle, Upload plugin bundle and plugin lifecycle tests with plugin group 'vmware-tmc/tmc-user:v9.9.9'
 	Context("Download plugin bundle, Upload plugin bundle and plugin lifecycle tests with plugin group 'vmware-tmc/tmc-user:v9.9.9'", func() {
 		// Test case: download plugin bundle for plugin-group vmware-tmc/tmc-user:v9.9.9
 		It("download plugin bundle for plugin-group vmware-tmc/tmc-user:v9.9.9", func() {
@@ -124,6 +129,7 @@ var _ = framework.CLICoreDescribe("[Tests:E2E][Feature:Airgapped-Plugin-Download
 
 	})
 
+	// Use case 3: Download plugin bundle, Upload plugin bundle and plugin lifecycle tests with plugin group 'vmware-tmc/tmc-user:v0.0.1'
 	Context("Download plugin bundle, Upload plugin bundle and plugin lifecycle tests with plugin group 'vmware-tmc/tmc-user:v0.0.1'", func() {
 		// Test case: download plugin bundle for plugin-group vmware-tmc/tmc-user:v0.0.1
 		It("download plugin bundle for plugin-group vmware-tmc/tmc-user:v0.0.1", func() {
@@ -170,6 +176,7 @@ var _ = framework.CLICoreDescribe("[Tests:E2E][Feature:Airgapped-Plugin-Download
 
 	})
 
+	// Use case 4: Download plugin bundle, Upload plugin bundle and plugin lifecycle tests without specifying any plugin group
 	Context("Download plugin bundle, Upload plugin bundle and plugin lifecycle tests without specifying any plugin group", func() {
 		// Test case: download the entire plugin bundle without specifying plugin group
 		It("download the entire plugin bundle without specifying plugin group", func() {
