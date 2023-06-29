@@ -235,6 +235,7 @@ func newDeleteDiscoverySourceCmd() *cobra.Command {
 			return nil
 		},
 	}
+	deleteDiscoverySourceCmd.Hidden = true
 	return deleteDiscoverySourceCmd
 }
 

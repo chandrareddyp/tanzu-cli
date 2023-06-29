@@ -140,6 +140,8 @@ func DiscoverStandalonePlugins(criteria *discovery.PluginDiscoveryCriteria) ([]d
 	discoveries, err := getPluginDiscoveries()
 	if err != nil {
 		return nil, err
+	} else if len(discoveries) == 0 {
+		return nil, errors.New("there are no plugin discovery sources available. Please run 'tanzu plugin source init' to initialize the discovery source with its default value")
 	}
 
 	plugins, err := discoverSpecificPlugins(discoveries, criteria)
